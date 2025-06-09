@@ -1,0 +1,74 @@
+[
+    {
+        "name": "Loh Wei Chern",
+        "gender": "Male",
+        "marital_status": "Single",
+        "phone": "0134399830",
+        "email": "lohweichern123@gmail.com",
+        "address": "11a Lintang Pekaka 4, Taman Pekaka, Sungai Dua, 11700 Gelugor, Penang",
+        "dob": "2002-07-29",
+        "nationality": "Malaysian",
+        "hire_date": "2025-05-11",
+        "department": "HR"
+    },
+    {
+        "name": "Jason",
+        "gender": "Male",
+        "marital_status": "Single",
+        "phone": "0123456789",
+        "email": "jason@gmail.com",
+        "address": "Bayan Lepas",
+        "dob": "2001-04-08",
+        "nationality": "Malaysian",
+        "hire_date": "2025-04-09",
+        "department": "IT"
+    },
+    {
+        "name": "Jack",
+        "gender": "Male",
+        "marital_status": "Single",
+        "phone": "0124567890",
+        "email": "abc@gmail.com",
+        "address": "abc",
+        "dob": "2000-02-08",
+        "nationality": "Malaysian",
+        "hire_date": "2025-04-27",
+        "department": "Finance"
+    },
+    {
+        "name": "Jenny",
+        "gender": "Female",
+        "marital_status": "Married",
+        "phone": "0134445555",
+        "email": "jen@gmail.com",
+        "address": "abcd",
+        "dob": "1997-02-08",
+        "nationality": "Malaysian",
+        "hire_date": "2025-02-26",
+        "department": "QA"
+    },
+    {
+        "name": "Rachel",
+        "gender": "Female",
+        "marital_status": "Single",
+        "phone": "0126667777",
+        "email": "rach@gmail.com",
+        "address": "abcde",
+        "dob": "1996-04-08",
+        "nationality": "Malaysian",
+        "hire_date": "2025-05-10",
+        "department": "AI"
+    },
+    {
+        "name": "Richard",
+        "gender": "Male",
+        "marital_status": "Single",
+        "phone": "0168889999",
+        "email": "richard@gmail.com",
+        "address": "abcdef",
+        "dob": "2000-02-28",
+        "nationality": "Malaysian",
+        "hire_date": "2025-06-03",
+        "department": "Finance"
+    }
+]

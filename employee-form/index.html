@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add New Employee</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="form-container">
+    <h2>Add New Employee</h2>
+    <form id="employeeForm">
+      <label>Name:<input type="text" name="name" required></label>
+
+      <label>Gender:
+        <select name="gender" required>
+          <option value="">Select</option>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </select>
+      </label>
+
+      <label>Marital Status:
+        <select name="marital_status" required>
+          <option value="">Select</option>
+          <option>Single</option>
+          <option>Married</option>
+        </select>
+      </label>
+
+      <label>Phone No.:<input type="tel" name="phone" pattern="\d{10}" required></label>
+      <label>Email:<input type="email" name="email" required></label>
+      <label>Address:<textarea name="address" required></textarea></label>
+      <label>Date of Birth:<input type="date" name="dob" required></label>
+      <label>Nationality:<input type="text" name="nationality" required></label>
+      <label>Hire Date:<input type="date" name="hire_date" required></label>
+      <label>Department:<input type="text" name="department" required></label>
+
+      <button type="submit">Submit</button>
+    </form>
+    <p id="responseMsg"></p>
+
+    <hr>
+    <a href="employees.html">View All Employees</a>
+  </div>
+
+  <script>
+    document.getElementById('employeeForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+
+      fetch('api/submit_employee.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        const msg = document.getElementById('responseMsg');
+        if (data.success) {
+          msg.style.color = 'green';
+          msg.textContent = data.message;
+          this.reset();
+        } else {
+          msg.style.color = 'red';
+          msg.textContent = data.message;
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>All Employees</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      padding: 8px;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+    th {
+      background-color: #f3f3f3;
+    }
+  </style>
+</head>
+<body>
+  <div class="employee-grid" id="employeeGrid"></div>
+  <hr>
+  <a href="index.html">← Back to Add Employee</a>
+
+  <script>
+  fetch('api/get_employees.php')
+    .then(response => response.json())
+    .then(data => {
+      const grid = document.getElementById('employeeGrid');
+      if (data.length === 0) {
+        grid.innerHTML = "<p>No employees found.</p>";
+        return;
+      }
+
+      data.forEach(employee => {
+        const card = document.createElement('div');
+        card.className = 'employee-card';
+        card.innerHTML = `
+          <h3>${employee.name}</h3>
+          <p><strong>Email:</strong> ${employee.email}</p>
+          <p><strong>Phone:</strong> ${employee.phone}</p>
+          <p><strong>Gender:</strong> ${employee.gender}</p>
+          <p><strong>DOB:</strong> ${employee.dob}</p>
+          <p><strong>Hire Date:</strong> ${employee.hire_date}</p>
+          <p><strong>Department:</strong> ${employee.department}</p>
+        `;
+        grid.appendChild(card);
+      });
+    })
+    .catch(err => {
+      document.getElementById('employeeGrid').innerHTML = "Error loading employee data.";
+      console.error(err);
+    });
+</script>
+</body>
+</html>
